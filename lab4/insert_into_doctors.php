@@ -7,7 +7,9 @@
 <?php
 require_once 'connection.php'; // подключаем скрипт
  
-if(isset($_POST['name']) && isset($_POST['company'])){
+if(isset($_POST['nameDoctor']) && isset($_POST['position']) &&
+	isset($_POST['number_cabinet']) && isset($_POST['timeVisit']) &&
+	isset($_POST['salary']) && isset($_POST['N_dog']) && isset($_POST['number'])){
      // подключаемся к серверу
     $link = mysqli_connect($host, $user, $password, $database) 
         or die("Ошибка " . mysqli_error($link)); 

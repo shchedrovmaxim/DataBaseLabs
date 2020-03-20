@@ -7,7 +7,7 @@
 <?php
 require_once 'connection.php'; // подключаем скрипт
  
-if(isset($_POST['name']) && isset($_POST['company'])){
+if(isset($_POST['N1_dog']) && isset($_POST['D_dog']) && isset($_POST['S_dog'])){
      // подключаемся к серверу
     $link = mysqli_connect($host, $user, $password, $database) 
         or die("Ошибка " . mysqli_error($link)); 
@@ -39,7 +39,7 @@ if(isset($_POST['name']) && isset($_POST['company'])){
 <input type="text" name="N1_dog" /></p>
 
 <p>Введите дату создания договора: <br> 
-<input type="text" name="D_dog" /></p>
+<input type="date" name="D_dog" /></p>
 
 <p>Введите сумму договора: <br> 
 <input type="text" name="S_dog" /></p>
