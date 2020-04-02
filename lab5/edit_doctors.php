@@ -11,8 +11,8 @@ $link = mysqli_connect($host, $user, $password, $database)
         or die("Ошибка " . mysqli_error($link)); 
      
 // если запрос POST 
-if(isset($_POST['number']) || isset($_POST['nameDoctor']) || isset($_POST['position']) ||
-   isset($_POST['number_cabinet']) || isset($_POST['timeVisit']) || isset($_POST['salary']) || isset($_POST['N_dog'])){
+if(isset($_POST['number']) && isset($_POST['nameDoctor']) &&isset($_POST['position']) &&
+   isset($_POST['number_cabinet']) && isset($_POST['timeVisit']) && isset($_POST['salary']) && isset($_POST['N_dog'])){
  
     $nameDoctor = htmlentities(mysqli_real_escape_string($link, $_POST['nameDoctor']));
     $position = htmlentities(mysqli_real_escape_string($link, $_POST['position']));
@@ -45,7 +45,7 @@ if(isset($_GET['number']))
     // выполняем запрос
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
     //если в запросе более нуля строк
-    if($result && mysqli_num_rows($result)>0) 
+    if($result && mysqli_num_rows($result)>=0) 
     {
         $row = mysqli_fetch_row($result); // получаем первую строку
         $nameDoctor = $row[1];

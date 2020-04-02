@@ -30,7 +30,7 @@ if($result)
     {
         $row = mysqli_fetch_row($result);
         echo "<tr>";
-            for ($j = 0 ; $j < 3 ; ++$j) echo "<td>$row[$j]</td>";
+            for ($j = 0 ; $j < 6; ++$j) echo "<td>$row[$j]</td>";
         echo "</tr>";
     }
     echo "</table>";

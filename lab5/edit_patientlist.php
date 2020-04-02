@@ -45,7 +45,7 @@ if(isset($_GET['number_of_card']))
     // выполняем запрос
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
     //если в запросе более нуля строк
-    if($result && mysqli_num_rows($result)>0) 
+    if($result && mysqli_num_rows($result)>=0) 
     {
         $row = mysqli_fetch_row($result); // получаем первую строку
         $patient_full_name = $row[1];

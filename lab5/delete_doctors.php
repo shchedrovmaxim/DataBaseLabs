@@ -18,7 +18,7 @@ $link = mysqli_connect($host, $user, $password, $database)
  
     mysqli_close($link);
     // перенаправление на скрипт index.php
-    header('Location: index.php');
+    header('Location: select_doctors.php');
 }
  
 if(isset($_GET['number']))

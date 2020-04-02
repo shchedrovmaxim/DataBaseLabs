@@ -32,11 +32,11 @@ if(isset($_GET['N1_dog']))
     $id = htmlentities(mysqli_real_escape_string($link, $_GET['number']));
      
     // создание строки запроса
-    $query ="SELECT * FROM dogovora WHERE N1_dog = '$N1_dog'";
+    $query ="SELECT * FROM dogovora WHERE N1_dog = '$N1_dog';";
     // выполняем запрос
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
     //если в запросе более нуля строк
-    if($result && mysqli_num_rows($result)>0) 
+    if($result && mysqli_num_rows($result)>=0) 
     {
         $row = mysqli_fetch_row($result); // получаем первую строку
         $D_dog = $row[1];
